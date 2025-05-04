@@ -102,7 +102,7 @@ const Skills = () => {
               onClick={() => setActiveTab(category.title)}
               className={`px-3 py-2 md:px-4 md:py-3 rounded-md flex items-center gap-1 md:gap-2 transition-all duration-300 text-sm md:text-base ${activeTab === category.title
                 ? 'bg-purple-600 text-white'
-                : 'bg-[#1E2235] text-gray-300 hover:bg-opacity-80'}`}
+                : 'bg-[#151823] text-gray-300 hover:bg-opacity-80'}`}
             >
               <span className="text-base md:text-lg">{category.icon}</span>
               <span>{category.title}</span>
@@ -117,7 +117,7 @@ const Skills = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="bg-[#1E2235] rounded-lg p-4 md:p-6 max-w-3xl mx-auto"
+          className="bg-[#151823] rounded-lg p-4 md:p-6 max-w-3xl mx-auto"
         >
           <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
             <div className="p-2 md:p-3 rounded-full bg-purple-600 text-white">
@@ -133,7 +133,7 @@ const Skills = () => {
                   <span className="text-gray-200">{skill.name}</span>
                   <span className="text-gray-400">{skill.level}%</span>
                 </div>
-                <div className="w-full h-1.5 md:h-2 bg-[#1E2235] rounded-full overflow-hidden">
+                <div className="w-full h-1.5 md:h-2 bg-[#151823] rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${skill.level}%` }}

@@ -97,7 +97,7 @@ const Projects = () => {
               key={project.id} 
               variants={itemVariants}
               whileHover={{ y: -10 }}
-              className="bg-[#1E2235] rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 text-white"
+              className="bg-[#151823] rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 text-white"
             >
               <div className="p-6 text-center">
                 <h3 className="text-2xl font-bold text-blue-500 mb-4">{project.title}</h3>
@@ -110,13 +110,13 @@ const Projects = () => {
                   {project.technologies.slice(0, 3).map((tech, index) => (
                     <span 
                       key={index} 
-                      className="px-3 py-1 bg-[#151823] rounded-md text-xs text-gray-300"
+                      className="px-3 py-1 bg-[#1A1F2E] rounded-md text-xs text-gray-300"
                     >
                       {tech}
                     </span>
                   ))}
                   {project.technologies.length > 3 && (
-                    <span className="px-3 py-1 bg-[#151823] rounded-md text-xs text-gray-300">+{project.technologies.length - 3} more</span>
+                    <span className="px-3 py-1 bg-[#1A1F2E] rounded-md text-xs text-gray-300">+{project.technologies.length - 3} more</span>
                   )}
                 </div>
                 
