@@ -50,7 +50,7 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 120, damping: 20 }}
-      className={`sticky top-0 z-50 ${scrolled 
+      className={`fixed w-full top-0 z-50 ${scrolled 
         ? 'bg-[#151823]/80 backdrop-blur-md shadow-lg' 
         : 'bg-transparent'} transition-all duration-300`}
     >
