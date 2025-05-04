@@ -39,7 +39,7 @@ const About = () => {
       >
         <motion.h2 
           variants={itemVariants}
-          className="text-3xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text"
+          className="text-3xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-[var(--purple-color)] to-[var(--pink-color)] text-transparent bg-clip-text"
         >
           About Me
         </motion.h2>
@@ -50,7 +50,7 @@ const About = () => {
             className="w-full md:w-1/3 flex justify-center"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-[var(--purple-color)] rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative w-64 h-64 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700 flex items-center justify-center border-4 border-white dark:border-gray-800 shadow-xl">
                 {/* Replace with your actual image */}
                 <motion.span 
@@ -73,16 +73,16 @@ const About = () => {
               variants={itemVariants}
               className="absolute mt-56 flex space-x-3"
             >
-              <a href="https://github.com/adityachavhan45" target="_blank" rel="noopener noreferrer" className="p-2 bg-[#1E2235] rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+              <a href="https://github.com/adityachavhan45" target="_blank" rel="noopener noreferrer" className="p-2 bg-[var(--card-bg-color)] rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
                 <FiGithub className="w-5 h-5 text-purple-400" />
               </a>
-              <a href="https://www.linkedin.com/in/aditya-chavhan-25b39a2bb" target="_blank" rel="noopener noreferrer" className="p-2 bg-[#1E2235] rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+              <a href="https://www.linkedin.com/in/aditya-chavhan-25b39a2bb" target="_blank" rel="noopener noreferrer" className="p-2 bg-[var(--card-bg-color)] rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
                 <FiLinkedin className="w-5 h-5 text-purple-400" />
               </a>
             </motion.div>
           </motion.div>
           
-          <div className="w-full md:w-2/3 space-y-3 md:space-y-4 bg-[#1E2235] rounded-xl p-4 md:p-6 shadow-lg text-white">
+          <div className="w-full md:w-2/3 space-y-3 md:space-y-4 bg-[var(--card-bg-color)] rounded-xl p-4 md:p-6 shadow-lg text-white">
             <motion.h3 
               variants={itemVariants}
               className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 text-white"
@@ -92,7 +92,7 @@ const About = () => {
             
             <motion.h4 
               variants={itemVariants}
-              className="text-lg md:text-xl mb-4 md:mb-6 bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text font-semibold"
+              className="text-lg md:text-xl mb-4 md:mb-6 bg-gradient-to-r from-[var(--purple-color)] to-[var(--pink-color)] text-transparent bg-clip-text font-semibold"
             >
               MERN Stack Developer
             </motion.h4>
@@ -122,7 +122,7 @@ const About = () => {
                 href="#contact" 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-md hover:shadow-lg transition-all duration-300 flex items-center gap-1 md:gap-2 text-sm md:text-base"
+                className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-[var(--purple-color)] to-[var(--pink-color)] text-white rounded-md hover:shadow-lg transition-all duration-300 flex items-center gap-1 md:gap-2 text-sm md:text-base"
               >
                 <FiMail className="w-4 h-4 md:w-5 md:h-5" />
                 Contact Me
@@ -133,7 +133,7 @@ const About = () => {
                 download="Aditya_Chavhan_Resume.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-4 py-2 md:px-6 md:py-3 border-2 border-purple-500 text-purple-400 rounded-md hover:bg-purple-500 hover:text-white transition-all duration-300 flex items-center gap-1 md:gap-2 text-sm md:text-base"
+                className="px-4 py-2 md:px-6 md:py-3 border-2 border-[var(--purple-color)] text-purple-400 rounded-md hover:bg-[var(--purple-color)] hover:text-white transition-all duration-300 flex items-center gap-1 md:gap-2 text-sm md:text-base"
               >
                 <FiDownload className="w-4 h-4 md:w-5 md:h-5" />
                 Download CV

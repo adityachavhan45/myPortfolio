@@ -106,7 +106,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative text-white overflow-hidden bg-[#1A1E2E] mt-20">
+    <footer className="relative text-white overflow-hidden bg-[var(--card-bg-color)] mt-20">
       <motion.div 
         ref={ref}
         variants={containerVariants}
@@ -117,16 +117,16 @@ const Footer = () => {
       >
         <motion.h2 
           variants={itemVariants}
-          className="text-3xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text"
+          className="text-3xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-[var(--purple-color)] to-[var(--pink-color)] text-transparent bg-clip-text"
         >
           Contact Me
         </motion.h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Contact Form */}
-          <motion.div variants={itemVariants} className="bg-gray-700/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl">
+          <motion.div variants={itemVariants} className="bg-[var(--primary-color)]/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl">
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <FiMessageSquare className="text-blue-400" />
+              <FiMessageSquare className="text-[var(--purple-color)]" />
               <span>Send Me a Message</span>
             </h3>
             
@@ -143,17 +143,17 @@ const Footer = () => {
             <form className="space-y-6" onSubmit={handleSubmit}>
               <motion.div 
                 variants={itemVariants}
-                className="group relative"
+                className="relative"
               >
-                <div className="absolute left-3 top-3 text-gray-400 group-focus-within:text-blue-400 transition-colors">
-                  <FiUser className="w-5 h-5" />
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <FiUser className="text-[var(--purple-color)]" />
                 </div>
                 <input 
                   type="text" 
                   id="name" 
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 rounded-lg bg-gray-600/50 border border-gray-600 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/50 transition-all duration-300"
+                  className="w-full pl-12 pr-4 py-4 rounded-xl bg-[var(--primary-color)] border-2 border-[var(--primary-color)] focus:border-[var(--purple-color)] focus:outline-none focus:ring-1 focus:ring-[var(--purple-color)] transition-all duration-300 text-white"
                   placeholder="Your Name"
                   required
                 />
@@ -161,17 +161,17 @@ const Footer = () => {
               
               <motion.div 
                 variants={itemVariants}
-                className="group relative"
+                className="relative"
               >
-                <div className="absolute left-3 top-3 text-gray-400 group-focus-within:text-blue-400 transition-colors">
-                  <FiMail className="w-5 h-5" />
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <FiMail className="text-[var(--purple-color)]" />
                 </div>
                 <input 
                   type="email" 
                   id="email" 
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 rounded-lg bg-gray-600/50 border border-gray-600 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/50 transition-all duration-300"
+                  className="w-full pl-12 pr-4 py-4 rounded-xl bg-[var(--primary-color)] border-2 border-[var(--primary-color)] focus:border-[var(--purple-color)] focus:outline-none focus:ring-1 focus:ring-[var(--purple-color)] transition-all duration-300 text-white"
                   placeholder="Your Email"
                   required
                 />
@@ -179,17 +179,17 @@ const Footer = () => {
               
               <motion.div 
                 variants={itemVariants}
-                className="group relative"
+                className="relative"
               >
-                <div className="absolute left-3 top-3 text-gray-400 group-focus-within:text-blue-400 transition-colors">
-                  <FiMessageSquare className="w-5 h-5" />
+                <div className="absolute top-4 left-0 pl-4 flex items-start pointer-events-none">
+                  <FiMessageSquare className="text-[var(--purple-color)]" />
                 </div>
                 <textarea 
                   id="message" 
-                  rows="5"
+                  rows="5" 
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 rounded-lg bg-gray-600/50 border border-gray-600 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/50 transition-all duration-300"
+                  className="w-full pl-12 pr-4 py-4 rounded-xl bg-[var(--primary-color)] border-2 border-[var(--primary-color)] focus:border-[var(--purple-color)] focus:outline-none focus:ring-1 focus:ring-[var(--purple-color)] transition-all duration-300 text-white resize-none"
                   placeholder="Your Message"
                   required
                 ></textarea>
@@ -201,7 +201,7 @@ const Footer = () => {
                 whileTap={{ scale: 0.98 }}
                 type="submit" 
                 disabled={formStatus.submitting}
-                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 w-full"
+                className="w-full px-6 py-4 bg-gradient-to-r from-[var(--purple-color)] to-[var(--pink-color)] text-white rounded-xl hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium"
               >
                 {formStatus.submitting ? (
                   <>
@@ -222,9 +222,9 @@ const Footer = () => {
           </motion.div>
           
           {/* Contact Information */}
-          <motion.div variants={itemVariants} className="bg-gray-700/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl">
+          <motion.div variants={itemVariants} className="bg-[var(--primary-color)]/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl">
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
-              <FiPhone className="text-blue-400" />
+              <FiPhone className="text-[var(--purple-color)]" />
               <span>Contact Information</span>
             </h3>
             
@@ -239,11 +239,11 @@ const Footer = () => {
                   whileHover={{ x: 5 }}
                   className="flex items-start gap-4 group"
                 >
-                  <div className="p-3 bg-blue-500/20 rounded-lg text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                  <div className="p-3 bg-[var(--purple-color)]/20 rounded-lg text-[var(--purple-color)] group-hover:bg-[var(--purple-color)] group-hover:text-white transition-all duration-300">
                     {item.icon}
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-300 group-hover:text-blue-400 transition-colors">{item.title}</h4>
+                    <h4 className="font-medium text-gray-300 group-hover:text-[var(--purple-color)] transition-colors">{item.title}</h4>
                     <p className="text-gray-400">{item.value}</p>
                   </div>
                 </motion.a>
@@ -262,7 +262,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     variants={itemVariants}
                     whileHover={{ y: -5 }}
-                    className="bg-[#1E2235] rounded-xl p-6 shadow-lg"
+                    className="bg-[var(--primary-color)] rounded-xl p-6 shadow-lg"
                     aria-label={social.name}
                   >
                     {social.icon}
@@ -274,7 +274,7 @@ const Footer = () => {
         </div>
       </motion.div>
       
-      <div className="bg-[#151823] py-6 border-t border-gray-800">
+      <div className="bg-[var(--primary-color)] py-6 border-t border-gray-800">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-400">  Aditya Chavhan.</p>
         </div>

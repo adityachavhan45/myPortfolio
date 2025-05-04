@@ -89,7 +89,7 @@ const Skills = () => {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-3xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text"
+          className="text-3xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-[var(--purple-color)] to-[var(--pink-color)] text-transparent bg-clip-text"
         >
           My Skills
         </motion.h2>
@@ -101,8 +101,8 @@ const Skills = () => {
               key={category.title}
               onClick={() => setActiveTab(category.title)}
               className={`px-3 py-2 md:px-4 md:py-3 rounded-md flex items-center gap-1 md:gap-2 transition-all duration-300 text-sm md:text-base ${activeTab === category.title
-                ? 'bg-purple-600 text-white'
-                : 'bg-[#151823] text-gray-300 hover:bg-opacity-80'}`}
+                ? 'bg-[var(--purple-color)] text-white'
+                : 'bg-[var(--card-bg-color)] text-gray-300 hover:bg-opacity-80'}`}
             >
               <span className="text-base md:text-lg">{category.icon}</span>
               <span>{category.title}</span>
@@ -117,10 +117,10 @@ const Skills = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="bg-[#151823] rounded-lg p-4 md:p-6 max-w-3xl mx-auto"
+          className="bg-[var(--card-bg-color)] rounded-lg p-4 md:p-6 max-w-3xl mx-auto"
         >
           <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
-            <div className="p-2 md:p-3 rounded-full bg-purple-600 text-white">
+            <div className="p-2 md:p-3 rounded-full bg-[var(--purple-color)] text-white">
               {activeCategory.icon}
             </div>
             <h3 className="text-xl md:text-2xl font-bold text-white">{activeCategory.title}</h3>
@@ -133,12 +133,12 @@ const Skills = () => {
                   <span className="text-gray-200">{skill.name}</span>
                   <span className="text-gray-400">{skill.level}%</span>
                 </div>
-                <div className="w-full h-1.5 md:h-2 bg-[#151823] rounded-full overflow-hidden">
+                <div className="w-full h-1.5 md:h-2 bg-[var(--primary-color)] rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${skill.level}%` }}
                     transition={{ duration: 1, delay: 0.2 }}
-                    className="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"
+                    className="h-full bg-gradient-to-r from-[var(--purple-color)] to-[var(--pink-color)] rounded-full"
                   />
                 </div>
               </div>

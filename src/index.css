@@ -2,3 +2,10 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+:root {
+  --primary-color: #151823;
+  --purple-color: #9333ea; /* purple-600 */
+  --pink-color: #0ea5e9; /* Changed from pink to sky-500 */
+  --card-bg-color: #1a1e2e;
+}

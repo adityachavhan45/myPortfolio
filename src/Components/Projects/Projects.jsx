@@ -18,7 +18,6 @@ const Projects = () => {
       longDescription: 'This Room Booking System provides a seamless experience for users looking to book accommodations. The application features an advanced search functionality with filters for dates, room types, and amenities. Users can create accounts, manage their bookings, and leave reviews. The admin panel allows property owners to manage their listings, view booking statistics, and respond to user inquiries.',
       features: ['User authentication', 'Advanced search filters', 'Real-time availability', 'Booking management', 'Review system', 'Admin dashboard'],
       technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
-      image: 'https://placehold.co/600x400/e2e8f0/1e40af?text=Room+Booking',
       demoLink: 'https://room-booking-frontend-euwi.onrender.com/',
       codeLink: 'https://github.com/adityachavhan45/room-booking-frontend',
     },
@@ -29,7 +28,6 @@ const Projects = () => {
       longDescription: 'This Blogging Platform offers a comprehensive solution for content creators. Users can write and format articles with a rich text editor, categorize posts, and add tags for better discoverability. The platform supports user profiles, followers, and a notification system. Readers can interact through comments, likes, and sharing options. The admin dashboard provides content moderation tools and analytics.',
       features: ['Rich text editor', 'Categories and tags', 'User profiles', 'Comment system', 'Social sharing', 'Analytics dashboard'],
       technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
-      image: 'https://placehold.co/600x400/e2e8f0/1e40af?text=Blogging+Website',
       demoLink: 'https://likhoverse.in/',
       codeLink: 'https://github.com/adityachavhan45/blogfrontend',
     },
@@ -40,7 +38,6 @@ const Projects = () => {
       longDescription: 'This E-commerce Platform provides a complete online shopping experience. The application features a product catalog with categories, filters, and search functionality. Users can add items to their cart, proceed to checkout, and make payments securely. The platform includes user profiles, order history, and wishlist functionality. The admin panel allows for inventory management, order processing, and sales analytics.',
       features: ['Product catalog', 'Shopping cart', 'Secure checkout', 'User accounts', 'Order tracking', 'Admin dashboard'],
       technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
-      image: 'https://placehold.co/600x400/e2e8f0/1e40af?text=E-commerce',
       demoLink: '#',
       codeLink: 'https://github.com/adityachavhan45/shophub',
     },
@@ -86,61 +83,68 @@ const Projects = () => {
       >
         <motion.h2 
           variants={itemVariants}
-          className="text-3xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text"
+          className="text-3xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-[var(--purple-color)] to-[var(--pink-color)] text-transparent bg-clip-text"
         >
           My Projects
         </motion.h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project) => (
             <motion.div 
-              key={project.id} 
+              key={project.id}
               variants={itemVariants}
-              whileHover={{ y: -10 }}
-              className="bg-[#151823] rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 text-white"
+              className="bg-[var(--card-bg-color)] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
             >
-              <div className="p-6 text-center">
-                <h3 className="text-2xl font-bold text-blue-500 mb-4">{project.title}</h3>
-              </div>
-              
-              <div className="px-6 pb-6">
-                <p className="text-gray-300 mb-6 text-justify">{project.description}</p>
+              <div className="p-6 md:p-8">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-white">{project.title}</h3>
+                <p className="text-gray-300 mb-6 flex-grow">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.slice(0, 3).map((tech, index) => (
                     <span 
                       key={index} 
-                      className="px-3 py-1 bg-[#1A1F2E] rounded-md text-xs text-gray-300"
+                      className="px-2 py-1 bg-[var(--primary-color)] text-gray-300 rounded-md text-xs"
                     >
                       {tech}
                     </span>
                   ))}
                   {project.technologies.length > 3 && (
-                    <span className="px-3 py-1 bg-[#1A1F2E] rounded-md text-xs text-gray-300">+{project.technologies.length - 3} more</span>
+                    <span className="px-2 py-1 bg-[var(--primary-color)] text-gray-300 rounded-md text-xs">
+                      +{project.technologies.length - 3} more
+                    </span>
                   )}
                 </div>
                 
-                <div className="flex gap-4">
-                  <motion.a
-                    href={project.demoLink}
+                <div className="flex justify-between gap-2">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-3 py-2 bg-gradient-to-r from-[var(--purple-color)] to-[var(--pink-color)] text-white rounded-md flex-grow flex items-center justify-center gap-1"
+                    onClick={() => openProjectDetails(project)}
+                  >
+                    View Details
+                  </motion.button>
+                  
+                  <motion.a 
+                    href={project.demoLink} 
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-4 py-2 bg-purple-600 text-white rounded-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-1"
+                    className="p-2 bg-[var(--primary-color)] text-white rounded-md flex items-center justify-center"
                   >
-                    Demo
+                    <FiExternalLink className="w-5 h-5" />
                   </motion.a>
                   
-                  <motion.a
-                    href={project.codeLink}
+                  <motion.a 
+                    href={project.codeLink} 
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-4 py-2 border border-purple-500 text-purple-400 rounded-md hover:bg-purple-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-1"
+                    className="p-2 bg-[var(--primary-color)] text-white rounded-md flex items-center justify-center"
                   >
-                    Code
+                    <FiGithub className="w-5 h-5" />
                   </motion.a>
                 </div>
               </div>
@@ -163,38 +167,31 @@ const Projects = () => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ type: "spring", damping: 25 }}
-            className="bg-white dark:bg-gray-800 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto" 
+            className="bg-[var(--card-bg-color)] rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto" 
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative">
-              <img 
-                src={selectedProject.image} 
-                alt={selectedProject.title} 
-                className="w-full h-64 object-cover"
-              />
+            <div className="relative p-4">
               <button 
                 onClick={closeProjectDetails}
                 className="absolute top-4 right-4 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
               >
                 <FiX className="w-5 h-5" />
               </button>
-            </div>
-            
-            <div className="p-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
+              
+              <h2 className="text-2xl md:text-3xl font-bold mt-8 mb-4 bg-gradient-to-r from-[var(--purple-color)] to-[var(--pink-color)] text-transparent bg-clip-text">
                 {selectedProject.title}
               </h2>
               
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-300 mb-6">
                 {selectedProject.longDescription}
               </p>
               
               <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Key Features</h3>
+                <h3 className="text-xl font-semibold mb-3 text-white">Key Features</h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {selectedProject.features.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-                      <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                    <li key={index} className="flex items-center gap-2 text-gray-300">
+                      <span className="w-2 h-2 bg-[var(--purple-color)] rounded-full"></span>
                       {feature}
                     </li>
                   ))}
@@ -202,12 +199,12 @@ const Projects = () => {
               </div>
               
               <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Technologies Used</h3>
+                <h3 className="text-xl font-semibold mb-3 text-white">Technologies Used</h3>
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.technologies.map((tech, index) => (
                     <span 
                       key={index} 
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-md"
+                      className="px-3 py-1 bg-[var(--primary-color)] text-gray-300 rounded-md"
                     >
                       {tech}
                     </span>
@@ -215,16 +212,16 @@ const Projects = () => {
                 </div>
               </div>
               
-              <div className="flex gap-4">
+              <div className="flex gap-4 mt-8">
                 <a 
                   href={selectedProject.demoLink} 
-                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-md transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-lg"
+                  className="px-6 py-3 bg-gradient-to-r from-[var(--purple-color)] to-[var(--pink-color)] text-white rounded-md transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-lg"
                 >
                   <FiExternalLink className="w-5 h-5" /> Live Demo
                 </a>
                 <a 
                   href={selectedProject.codeLink} 
-                  className="px-6 py-3 border-2 border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 rounded-md hover:bg-blue-600 hover:text-white transition-all duration-300 flex items-center gap-2"
+                  className="px-6 py-3 border-2 border-[var(--purple-color)] text-[var(--purple-color)] rounded-md hover:bg-[var(--purple-color)] hover:text-white transition-all duration-300 flex items-center gap-2"
                 >
                   <FiGithub className="w-5 h-5" /> View Code
                 </a>
